@@ -1,0 +1,27 @@
+<form class="item-add-grid" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <!--<form [formGroup] ="contactForm">-->
+        <div class="item-fn">
+            <input type="text" name="firstName" id="fn-field" placeholder="First Name" formControlName="firstName" ng-required="true">
+            <div class="input-error" *ngIf="contactForm.controls['firstName'].errors">
+                First Name is required.
+            </div>
+        </div>
+        <div class="item-ln">
+                <input type="text" name="lastName" id="ln-field" placeholder="Last Name" formControlName="lastName">
+        </div>
+        <div class="item-phone">
+            <input type="number" name="phone" id="phone-field" placeholder="Phone Number" formControlName="phone" ng-required="true">            
+            <div class="input-error" *ngIf="contactForm.controls['phone'].errors">
+                Enter a valid Phone
+            </div>
+        </div>
+        <div class="item-email">
+            <input type="email" name="email" id="email-field" placeholder="Email" formControlName="email" required>
+        </div>
+        <div class="item-add-btn">
+            <button id="add-button" class="btn waves-effect waves-light add-button green" type="submit" name="action">
+                Add
+            </button>
+        </div>
+    <!--</form>-->
+    </form>

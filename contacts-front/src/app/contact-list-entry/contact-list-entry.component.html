@@ -1,0 +1,28 @@
+<li class="collection-item" contact-id="sample-id">
+  <div (click)="contact.showMore = !contact.showMore">
+    <img src="http://lorempixel.com/30/30/"/>&nbsp;{{ contact.firstName }} {{ contact.lastName }}
+    <i class="small material-icons show" id="show" mode="show-more">
+      <div *ngIf="!contact.showMore">
+        expand_more
+      </div>
+      <div *ngIf="contact.showMore">
+        expand_less
+      </div>
+    </i>
+    <div *ngIf="contact.showMore" class="card darken-1 detailed-view">
+        <div class="card horizontal">
+            <div class="card-image">
+                <img class="responsive-img circle" src="http://lorempixel.com/133/133/">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <span class="card-title"> <i class="fas fa-user"></i>&nbsp; {{contact.firstName}} {{ contact.lastName }}</span>
+                    <span><i class="fas fa-phone"></i>&nbsp;{{ contact.phone }}</span>
+                    <br> 
+                    <span><i class="fas fa-at"></i>&nbsp;{{ contact.email }}</span>
+                </div>    
+            </div>
+        </div>
+    </div>
+  </div>
+</li>

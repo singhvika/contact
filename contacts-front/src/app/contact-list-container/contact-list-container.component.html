@@ -1,0 +1,14 @@
+<div class="item-search">
+    <div class="search-box icon-right">
+        <i class="small material-icons">search</i><input (change)="onSearch($event.target.value)" type="text" name="search" class="search-field" id="searchField" placeholder="search">
+    </div>                
+</div>
+<div class="contact-list">
+  <ul class="collection" id="contact-ul">
+    <div *ngFor="let entry of contactsToDisplay">
+        <app-contact-list-entry [contactEntry]="entry"></app-contact-list-entry>
+        
+    </div>
+    
+  </ul>
+</div>
